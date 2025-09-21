@@ -1,2 +1,0 @@
-# jiya-portfolio
-
