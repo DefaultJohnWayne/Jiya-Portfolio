@@ -1,63 +1,71 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
+import { Badge } from "@/components/ui/badge"
 
 export default function SkillsSection() {
   const skillCategories = [
     {
-      title: "Frontend Development",
-      icon: "🎨",
+      title: "Web Development",
+      icon: "💻",
       skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "Vue.js", level: 80 },
+        "HTML / CSS / JavaScript",
+        "React / Next.js",
+        "Tailwind CSS",
+        "WordPress",
       ],
     },
     {
-      title: "Backend Development",
-      icon: "⚙️",
+      title: "Networking & Security",
+      icon: "🔐",
       skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Python", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MongoDB", level: 75 },
+        "Computer Networks",
+        "Kali Linux Tools",
+        "Basic Penetration Testing",
       ],
     },
     {
       title: "Tools & Technologies",
-      icon: "🛠️",
+      icon: "⚡",
+      skills: ["Git & GitHub", "MySQL", "Visual Studio Code", "Packet Tracer", "GNS3", "Arduino"],
+    },
+    {
+      title: "Soft Skills",
+      icon: "🌟",
       skills: [
-        { name: "Git/GitHub", level: 95 },
-        { name: "Docker", level: 80 },
-        { name: "AWS", level: 75 },
-        { name: "Figma", level: 90 },
+        "Communication & Teamwork",
+        "Problem-Solving",
+        "Adaptability & Quick Learning",
+        "Time Management",
       ],
     },
   ]
 
   return (
-    <section id="skills" className="py-20 px-4 bg-secondary/10">
+    <section id="skills" className="py-20 px-4 bg-black text-pink-100">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">
-            My <span className="text-primary">Skills</span>
+            My <span className="text-pink-400">Skills</span>
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto animate-fade-in-up" style={{ animationDelay: "0.2s" }}></div>
+          <div
+            className="w-24 h-1 bg-pink-500 mx-auto animate-fade-in-up"
+            style={{ animationDelay: "0.2s" }}
+          ></div>
           <p
-            className="text-muted-foreground text-lg mt-6 animate-fade-in-up text-pretty"
+            className="text-pink-200/80 text-lg mt-6 animate-fade-in-up text-pretty"
             style={{ animationDelay: "0.4s" }}
           >
-            Technologies and tools I love working with
+             A blend of web development, networking knowledge, cybersecurity
+            curiosity, and real-life collaboration 🪼
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <Card
               key={category.title}
-              className="animate-fade-in-up hover:shadow-lg transition-shadow duration-300 bg-card/50 backdrop-blur-sm border-primary/20"
+              className="animate-fade-in-up hover:shadow-lg transition-shadow duration-300 bg-pink-400/5 backdrop-blur-sm border-pink-400/30"
               style={{ animationDelay: `${0.6 + categoryIndex * 0.2}s` }}
             >
               <CardHeader className="text-center">
@@ -67,23 +75,19 @@ export default function SkillsSection() {
                 >
                   {category.icon}
                 </div>
-                <CardTitle className="text-card-foreground">{category.title}</CardTitle>
+                <CardTitle className="text-pink-200">{category.title}</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="flex flex-wrap gap-2 justify-center">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium text-card-foreground">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <Progress
-                      value={skill.level}
-                      className="h-2"
-                      style={{
-                        animationDelay: `${1.2 + categoryIndex * 0.2 + skillIndex * 0.1}s`,
-                      }}
-                    />
-                  </div>
+                  <Badge
+                    key={skill}
+                    variant="secondary"
+                    className="bg-pink-500/20 text-pink-200 hover:scale-105 transition-transform cursor-default"
+                    style={{ animationDelay: `${1.2 + categoryIndex * 0.2 + skillIndex * 0.1
+                      }s` }}
+                  >
+                    {skill}
+                  </Badge>
                 ))}
               </CardContent>
             </Card>

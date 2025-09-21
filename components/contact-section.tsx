@@ -11,47 +11,72 @@ export default function ContactSection() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "alex@example.com",
-      link: "mailto:alex@example.com",
+      value: "najihahsharudin1806@gmail.com",
+      link: "mailto:najihahsharudin1806@gmail.com",
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+60 019 727 1806",
+      link: "tel:+60197271806",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Selangor, Malaysia",
       link: "#",
     },
   ]
 
   return (
-    <section id="contact" className="py-20 px-4 bg-secondary/10">
-      <div className="max-w-6xl mx-auto">
+    <section
+      id="contact"
+      className="py-20 px-4 relative bg-black text-pink-100 overflow-hidden"
+    >
+      {/* Floating glowing orbs */}
+      <div className="absolute top-10 left-20 w-20 h-20 bg-pink-400/10 rounded-full animate-float"></div>
+      <div
+        className="absolute bottom-16 right-32 w-24 h-24 bg-pink-300/20 rounded-full animate-float"
+        style={{ animationDelay: "1s" }}
+      ></div>
+      <div
+        className="absolute top-1/2 right-10 text-4xl animate-bounce-slow"
+        style={{ animationDelay: "2s" }}
+      >
+        💌
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Section Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">
-            Get In <span className="text-primary">Touch</span>
+            Get In <span className="text-pink-400">Touch</span>
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto animate-fade-in-up" style={{ animationDelay: "0.2s" }}></div>
+          <div
+            className="w-24 h-1 bg-pink-400 mx-auto animate-fade-in-up"
+            style={{ animationDelay: "0.2s" }}
+          />
           <p
-            className="text-muted-foreground text-lg mt-6 animate-fade-in-up text-pretty"
+            className="text-pink-200/80 text-lg mt-6 animate-fade-in-up text-pretty"
             style={{ animationDelay: "0.4s" }}
           >
-            Let's work together to bring your ideas to life!
+            Let’s work together to bring your ideas to life!
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-8 animate-slide-in-left" style={{ animationDelay: "0.6s" }}>
+          {/* Left Column: Contact Info */}
+          <div
+            className="space-y-8 animate-slide-in-left"
+            style={{ animationDelay: "0.6s" }}
+          >
             <div>
-              <h3 className="text-2xl font-bold text-card-foreground mb-6">Let's Connect!</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed text-pretty">
-                I'm always excited to discuss new opportunities, creative projects, or just chat about technology. Feel
-                free to reach out!
+              <h3 className="text-2xl font-bold text-pink-100 mb-6">
+                Let’s Connect!
+              </h3>
+              <p className="text-pink-200/80 text-lg leading-relaxed text-pretty">
+                I’m always excited to discuss new opportunities, creative
+                projects, or just chat about technology. Feel free to reach out!
               </p>
             </div>
 
@@ -59,67 +84,109 @@ export default function ContactSection() {
               {contactInfo.map((info, index) => (
                 <Card
                   key={info.title}
-                  className="group hover:shadow-md transition-all duration-300 animate-fade-in-up bg-card/50 backdrop-blur-sm border-primary/20"
+                  className="group hover:shadow-lg transition-all duration-300 animate-fade-in-up bg-pink-950/20 backdrop-blur-md border-pink-400/20 hover:scale-105"
                   style={{ animationDelay: `${0.8 + index * 0.2}s` }}
                 >
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-4">
-                      <div className="text-primary group-hover:scale-110 transition-transform">{info.icon}</div>
-                      <div>
-                        <h4 className="font-semibold text-card-foreground">{info.title}</h4>
-                        <a href={info.link} className="text-muted-foreground hover:text-primary transition-colors">
-                          {info.value}
-                        </a>
-                      </div>
+                  <CardContent className="p-4 flex items-center gap-4">
+                    <div className="text-pink-400 group-hover:scale-125 transition-transform">
+                      {info.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-pink-100">
+                        {info.title}
+                      </h4>
+                      <a
+                        href={info.link}
+                        className="text-pink-200/80 hover:text-pink-400 transition-colors"
+                      >
+                        {info.value}
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
               ))}
             </div>
-
-            {/* Cute decorative element */}
-            <div className="text-center">
-              <div className="text-6xl animate-wiggle">💌</div>
-              <p className="text-sm text-muted-foreground mt-2">Looking forward to hearing from you!</p>
-            </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Right Column: Contact Form */}
           <Card
-            className="animate-fade-in-up bg-card/50 backdrop-blur-sm border-primary/20"
+            className="animate-fade-in-up bg-pink-950/20 backdrop-blur-md border-pink-400/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
             style={{ animationDelay: "0.8s" }}
           >
             <CardHeader>
-              <CardTitle className="text-2xl text-card-foreground">Send a Message</CardTitle>
+              <CardTitle className="text-2xl text-pink-100">
+                Send a Message
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium text-card-foreground mb-2 block">Name</label>
-                  <Input placeholder="Your name" />
+                  <label className="text-sm font-medium text-pink-200 block mb-2">
+                    Name
+                  </label>
+                  <Input
+                    placeholder="Your name"
+                    className="bg-black/40 border-pink-400/30 text-pink-100 placeholder:text-pink-300"
+                  />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-card-foreground mb-2 block">Email</label>
-                  <Input type="email" placeholder="your@email.com" />
+                  <label className="text-sm font-medium text-pink-200 block mb-2">
+                    Email
+                  </label>
+                  <Input
+                    type="email"
+                    placeholder="your@email.com"
+                    className="bg-black/40 border-pink-400/30 text-pink-100 placeholder:text-pink-300"
+                  />
                 </div>
               </div>
 
               <div>
-                <label className="text-sm font-medium text-card-foreground mb-2 block">Subject</label>
-                <Input placeholder="What's this about?" />
+                <label className="text-sm font-medium text-pink-200 block mb-2">
+                  Subject
+                </label>
+                <Input
+                  placeholder="What’s this about?"
+                  className="bg-black/40 border-pink-400/30 text-pink-100 placeholder:text-pink-300"
+                />
               </div>
 
               <div>
-                <label className="text-sm font-medium text-card-foreground mb-2 block">Message</label>
-                <Textarea placeholder="Tell me about your project or just say hello!" rows={5} />
+                <label className="text-sm font-medium text-pink-200 block mb-2">
+                  Message
+                </label>
+                <Textarea
+                  placeholder="Tell me about your project or just say hello!"
+                  rows={5}
+                  className="bg-black/40 border-pink-400/30 text-pink-100 placeholder:text-pink-300"
+                />
               </div>
 
-              <Button className="w-full group">
+              <Button className="w-full bg-pink-500 hover:bg-pink-600 text-white group">
                 <Send className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
                 Send Message
               </Button>
             </CardContent>
           </Card>
+        </div>
+
+        {/* Decorative floating elements */}
+        <div className="relative mt-16">
+          <div className="absolute top-0 left-1/4 text-2xl animate-float">
+            ✨
+          </div>
+          <div
+            className="absolute top-10 right-1/4 text-2xl animate-float"
+            style={{ animationDelay: "1s" }}
+          >
+            ₊˚ෆ
+          </div>
+          <div
+            className="absolute -top-5 left-1/2 text-2xl animate-bounce-gentle"
+            style={{ animationDelay: "2s" }}
+          >
+            🌷
+          </div>
         </div>
       </div>
     </section>

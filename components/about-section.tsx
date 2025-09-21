@@ -1,55 +1,82 @@
 "use client"
 
+import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
 export default function AboutSection() {
-  const interests = ["Web Development", "UI/UX Design", "Machine Learning", "Photography", "Gaming", "Cooking"]
+  const interests = [
+    "Cybersecurity",
+    "Capture The Flag (CTF)",
+    "AI",
+    "Machine Learning",
+    "Computer Network",
+  ]
 
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className="py-20 px-4 bg-black text-pink-100">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">
-            About <span className="text-primary">Me</span>
+            About <span className="text-pink-400">Me</span>
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto animate-fade-in-up" style={{ animationDelay: "0.2s" }}></div>
+          <div
+            className="w-24 h-1 bg-pink-500 mx-auto animate-fade-in-up"
+            style={{ animationDelay: "0.2s" }}
+          ></div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Avatar / Illustration */}
           <div className="animate-slide-in-left">
-            <Card className="p-8 bg-card/50 backdrop-blur-sm border-primary/20">
+            <Card className="p-8 bg-pink-400/5 backdrop-blur-sm border-pink-400/30">
               <CardContent className="p-0">
-                <div className="w-full h-80 bg-gradient-to-br from-primary/20 to-secondary/30 rounded-lg mb-6 flex items-center justify-center text-8xl">
-                  👩‍💻
+                <div className="w-full h-80 rounded-lg mb-6 overflow-hidden flex items-center justify-center animate-jelly-pulse">
+                  <Image
+                    src="/me.jfif"
+                    alt="Nurul Najihah"
+                    width={300}
+                    height={300}
+                    className="object-cover rounded-lg"
+                  />
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl animate-bounce-gentle">🌟</div>
+                  <div className="text-2xl text-white animate-bounce-gentle">˙✧˖°🎓 ༘⋆｡ ˚</div>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-            <h3 className="text-2xl font-bold text-card-foreground">Hello! I'm Alex Johnson</h3>
-            <p className="text-muted-foreground text-lg leading-relaxed text-pretty">
-              I'm a passionate full-stack developer with 5+ years of experience creating digital experiences that are
-              not only functional but also delightful to use. I love turning complex problems into simple, beautiful
-              solutions.
+          {/* Bio */}
+          <div
+            className="space-y-6 animate-fade-in-up"
+            style={{ animationDelay: "0.4s" }}
+          >
+            <h3 className="text-2xl font-bold text-pink-300">
+              Hello! I'm Nurul Najihah (Jiya)
+            </h3>
+            <p className="text-pink-200/80 text-lg leading-relaxed text-pretty">
+              I’m currently a final year student pursuing a Bachelor of Computer Science (Hons.) 
+              in Computer Networks at UiTM Shah Alam. While I have experience in web development, 
+              my true passion lies in cybersecurity. I enjoy exploring different areas of tech, 
+              experimenting with small projects, and constantly learning along the way.
             </p>
-            <p className="text-muted-foreground text-lg leading-relaxed text-pretty">
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or
-              enjoying a good cup of coffee while sketching out my next big idea.
+            <p className="text-pink-200/80 text-lg leading-relaxed text-pretty">
+              I’ve actively joined Capture the Flag (CTF) competitions to sharpen my problem-solving 
+              skills and dive deeper into the world of cybersecurity. For me, it’s about combining 
+              curiosity, creativity, and technical challenges — whether that’s building something 
+              simple, breaking something complex, or defending against the unknown.
             </p>
-
             <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-card-foreground">Interests & Hobbies</h4>
+              <h4 className="text-xl font-semibold text-pink-200">
+                Interests & Hobbies
+              </h4>
               <div className="flex flex-wrap gap-2">
                 {interests.map((interest, index) => (
                   <Badge
                     key={interest}
                     variant="secondary"
-                    className="animate-fade-in-up hover:scale-105 transition-transform cursor-default"
+                    className="animate-fade-in-up bg-pink-500/20 text-pink-200 hover:scale-105 transition-transform cursor-default"
                     style={{ animationDelay: `${0.6 + index * 0.1}s` }}
                   >
                     {interest}
