@@ -1,7 +1,7 @@
 {
   "name": "Jiya-Portfolio",
   "version": "0.1.0",
-  "homepage": "https://DefaultJohnWayne.github.io/Jiya-Portfolio",
+  "homepage": "https://defaultjohnwayne.github.io/Jiya-Portfolio/",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
