@@ -9,7 +9,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  output: "export", // <-- add this
+  output: 'export',          // required for static export
+  basePath: '/jiya-portfolio',   // your repo name
+  assetPrefix: '/jiya-portfolio', // ensures CSS/JS load correctly
 }
 
 export default nextConfig
